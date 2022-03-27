@@ -1,6 +1,8 @@
 import 'dart:ui' as dartUI;
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,14 +12,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Credia',
       theme: ThemeData(
-        primaryColor: Colors.green,
-        scaffoldBackgroundColor: Colors.grey.shade200,
+        primaryColor: dartUI.Color.fromARGB(255, 30, 117, 199),
+        scaffoldBackgroundColor: dartUI.Color.fromARGB(255, 40, 109, 246),
       ),
       home: MyHomePage(),
     );
   }
 }
 
+//change background color
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -25,6 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Align buildTitle(BuildContext context) {
+    //change background color
     return Align(
       alignment: Alignment.topCenter,
       child: Padding(
@@ -33,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
           '欢迎关岭',
           style: TextStyle(
             fontSize: 32.0,
-            color: Theme.of(context).primaryColor,
+            color: Colors.white,
           ),
         ),
       ),
@@ -44,13 +48,30 @@ class _MyHomePageState extends State<MyHomePage> {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 225.0),
+        padding: const EdgeInsets.only(bottom: 405.0),
+        child: Container(
+          height: 100.0,
+          width: 100.0,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Align multiCircle() {
+    return Align(
+      alignment: Alignment.center,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 255.0),
         child: Container(
           height: 150.0,
           width: 150.0,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.red,
+            color: dartUI.Color.fromARGB(255, 33, 91, 240),
           ),
         ),
       ),
@@ -63,10 +84,11 @@ class _MyHomePageState extends State<MyHomePage> {
       child: BackdropFilter(
         filter: dartUI.ImageFilter.blur(sigmaX: 0.0, sigmaY: 0.0),
         child: Container(
-          height: 300.0,
-          width: double.infinity,
+          height: 400.0,
+          width: 500.0,
           decoration: BoxDecoration(
-            color: Colors.grey.shade200.withOpacity(0.3),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(40.0),
           ),
           child: Align(
             alignment: Alignment.bottomCenter,
@@ -85,16 +107,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return Column(
       children: <Widget>[
         SizedBox(
-          width: 175.0,
+          width: 200.0,
           height: 50.0,
           child: FlatButton(
               onPressed: () {},
               color: theme.primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0)),
-              child: Text(
+              child: const Text(
                 'Sign in',
-                style: theme.primaryTextTheme.button,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                ),
               )),
         ),
         FlatButton(
@@ -103,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(30.0)),
             child: Text(
               'Sign up',
-              style: TextStyle(color: theme.primaryColor),
+              style: TextStyle(color: theme.primaryColor, fontSize: 18.0),
             ))
       ],
     );
@@ -116,6 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           buildTitle(context),
           buildCircle(),
+          multiCircle(),
           buildFrostedGlass(),
         ],
       ),
