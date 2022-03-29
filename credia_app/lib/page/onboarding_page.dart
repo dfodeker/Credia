@@ -16,11 +16,11 @@ class OnBoardingPage extends StatelessWidget {
                 titleTextStyle: TextStyle(
                   fontSize: 28.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 bodyTextStyle: TextStyle(
                   fontSize: 16.0,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 //bodyPadding: EdgeInsets.only(left: 16.0, right: 16.0),
                 //contentPadding: EdgeInsets.only(top: 30.0),
