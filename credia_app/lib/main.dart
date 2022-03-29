@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Credia',
       theme: ThemeData(
-        primaryColor: dartUI.Color.fromARGB(255, 238, 87, 41),
+        primaryColor: const dartUI.Color.fromARGB(255, 30, 117, 199),
         scaffoldBackgroundColor: const dartUI.Color.fromARGB(255, 40, 109, 246),
       ),
       home: MyHomePage(),
