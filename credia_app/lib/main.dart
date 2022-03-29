@@ -230,7 +230,8 @@ class Page3 extends StatelessWidget {
               child: const Text('Back',
                   style: TextStyle(fontSize: 18.0, color: Colors.white)),
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.pop(context,
+                    MaterialPageRoute(builder: (context) => const Page2()));
               },
             ),
           ],
