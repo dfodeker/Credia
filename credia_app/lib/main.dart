@@ -254,7 +254,7 @@ class Page3 extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.money_dollar),
             label: 'Payments',
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.white,
           ),
         ],
       ),
