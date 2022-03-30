@@ -240,15 +240,19 @@ class Page3 extends StatelessWidget {
       tabBar: CupertinoTabBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet_outlined),
+            icon: Icon(CupertinoIcons.house),
             label: 'Accounts',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.credit_card_rounded),
+            icon: Icon(CupertinoIcons.graph_square),
             label: 'Virtual cards',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money_rounded),
+            icon: Icon(CupertinoIcons.creditcard),
+            label: 'Virtual cards',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.money_dollar),
             label: 'Payments',
             backgroundColor: Colors.red,
           ),
