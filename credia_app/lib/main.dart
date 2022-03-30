@@ -55,7 +55,7 @@ class ButtonSection extends StatelessWidget {
           child: TextButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Page2()));
+                    MaterialPageRoute(builder: (context) => const Page3()));
               },
               style: TextButton.styleFrom(
                   backgroundColor: Colors.blue,
@@ -171,7 +171,7 @@ class Title extends StatelessWidget {
           'Welcome to Credia',
           style: TextStyle(
             fontSize: 32.0,
-            color: Colors.white,
+            color: Colors.blue,
           ),
         ),
       ),
