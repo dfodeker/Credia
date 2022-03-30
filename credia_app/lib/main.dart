@@ -236,24 +236,31 @@ class Page3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Page 3',
-                style: TextStyle(fontSize: 32.0, color: Colors.white)),
-            TextButton(
-              child: const Text('Back',
-                  style: TextStyle(fontSize: 18.0, color: Colors.white)),
-              onPressed: () {
-                Navigator.pop(context,
-                    MaterialPageRoute(builder: (context) => const Page2()));
-              },
-            ),
-          ],
-        ),
+    return CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance_wallet_outlined),
+            label: 'Accounts',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.credit_card_rounded),
+            label: 'Virtual cards',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.attach_money_rounded),
+            label: 'Payments',
+            backgroundColor: Colors.red,
+          ),
+        ],
       ),
+      tabBuilder: (BuildContext context, int index) {
+        return CupertinoTabView(builder: (BuildContext context) {
+          return Center(
+            child: Text('Content of tab $index'),
+          );
+        });
+      },
     );
   }
 }
