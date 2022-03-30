@@ -31,11 +31,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: <Widget>[
-          const Title(),
-          const FrostedGlass(),
-          const BigCircle(),
-          const SmallCircle(),
+        children: const <Widget>[
+          Title(),
+          FrostedGlass(),
+          BigCircle(),
+          SmallCircle(),
         ],
       ),
     );
@@ -209,6 +209,22 @@ class Page2 extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance_wallet_outlined),
+            label: 'Accounts',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.credit_card_rounded),
+            label: 'Virtual cards',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.attach_money_rounded),
+            label: 'School',
+          ),
+        ],
       ),
     );
   }
