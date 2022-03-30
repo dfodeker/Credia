@@ -223,6 +223,7 @@ class Page2 extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.attach_money_rounded),
             label: 'Payments',
+            backgroundColor: Colors.red,
           ),
         ],
       ),
