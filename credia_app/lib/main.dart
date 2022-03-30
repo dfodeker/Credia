@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Credia',
       theme: ThemeData(
         primaryColor: const dartUI.Color.fromARGB(255, 30, 117, 199),
-        scaffoldBackgroundColor: const dartUI.Color.fromARGB(255, 40, 109, 246),
+        scaffoldBackgroundColor: dartUI.Color.fromARGB(255, 224, 225, 226),
       ),
       home: MyHomePage(),
     );
@@ -190,10 +190,10 @@ class Page2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('Page 2',
-                style: TextStyle(fontSize: 32.0, color: Colors.white)),
+                style: TextStyle(fontSize: 32.0, color: Colors.black)),
             TextButton(
               child: const Text('Back',
-                  style: TextStyle(fontSize: 18.0, color: Colors.white)),
+                  style: TextStyle(fontSize: 18.0, color: Colors.black)),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -201,7 +201,7 @@ class Page2 extends StatelessWidget {
             //text button
             TextButton(
               child: const Text('Next',
-                  style: TextStyle(fontSize: 18.0, color: Colors.white)),
+                  style: TextStyle(fontSize: 18.0, color: Colors.black)),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Page3()));
@@ -245,7 +245,7 @@ class Page3 extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.graph_square),
-            label: 'Virtual cards',
+            label: 'Transactions',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.creditcard),
@@ -261,10 +261,20 @@ class Page3 extends StatelessWidget {
       tabBuilder: (BuildContext context, int index) {
         return CupertinoTabView(builder: (BuildContext context) {
           return Center(
-            child: Text('Content of tab $index'),
+            child: Text(' This is page $index',
+                style: const TextStyle(fontSize: 32.0, color: Colors.black)),
           );
         });
       },
     );
+  }
+}
+
+class BackButton extends StatelessWidget {
+  const BackButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
