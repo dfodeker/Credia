@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
     );
   }
-}
+} //random commenthjj
 
 //change background color
 class MyHomePage extends StatefulWidget {
@@ -230,6 +230,7 @@ class Page2 extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.squarePollVertical),
             label: 'Transactions',
+            backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.dollarSign),
