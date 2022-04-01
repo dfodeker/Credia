@@ -1,6 +1,6 @@
 import 'dart:ui' as dartUI;
 
-import 'package:flutter/cupertino.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -54,8 +54,8 @@ class ButtonSection extends StatelessWidget {
           height: 50.0,
           child: TextButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Page2()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Page2()));
               },
               style: TextButton.styleFrom(
                   backgroundColor: Colors.blue,
@@ -180,11 +180,16 @@ class Title extends StatelessWidget {
 }
 
 class Page2 extends StatelessWidget {
-  const Page2({Key? key}) : super(key: key);
-
+  Page2({Key? key}) : super(key: key);
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Page 2'),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -203,8 +208,8 @@ class Page2 extends StatelessWidget {
               child: const Text('Next',
                   style: TextStyle(fontSize: 18.0, color: Colors.black)),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Page3()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Page2()));
               },
             ),
           ],
@@ -213,68 +218,26 @@ class Page2 extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet_outlined),
+            icon: Icon(FontAwesomeIcons.wallet),
             label: 'Accounts',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.credit_card_rounded),
-            label: 'Virtual cards',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money_rounded),
-            label: 'Payments',
             backgroundColor: Colors.red,
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class Page3 extends StatelessWidget {
-  const Page3({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(
-        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.house),
-            label: 'Accounts',
+            icon: Icon(FontAwesomeIcons.creditCard),
+            label: 'Virtual cards',
+            backgroundColor: Colors.green,
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.graph_square),
+            icon: Icon(FontAwesomeIcons.squarePollVertical),
             label: 'Transactions',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.creditcard),
-            label: 'Virtual cards',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.money_dollar),
+            icon: Icon(FontAwesomeIcons.dollarSign),
             label: 'Payments',
-            backgroundColor: Colors.grey,
+            backgroundColor: Colors.black,
           ),
         ],
       ),
-      tabBuilder: (BuildContext context, int index) {
-        return CupertinoTabView(builder: (BuildContext context) {
-          return Center(
-            child: Text(' This is page $index',
-                style: const TextStyle(fontSize: 32.0, color: Colors.black)),
-          );
-        });
-      },
     );
-  }
-}
-
-class BackButton extends StatelessWidget {
-  const BackButton({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
