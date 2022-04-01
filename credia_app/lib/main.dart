@@ -1,5 +1,5 @@
 import 'dart:ui' as dartUI;
-
+import 'placeholder_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
@@ -189,30 +189,34 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
-  List<Widget> _widgetOptions = <Widget>[
-    AccountsPage(),
-    VirtualCardsPage(),
-    TransactionsPage(),
-    PaymentsPage(),
+  final List _children = [
+    PlaceholderWidget(Colors.white),
+    PlaceholderWidget(Colors.deepOrange),
+    PlaceholderWidget(Colors.green),
+    PlaceholderWidget(Colors.blue)
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: _currentIndex == 0 ? Text('Credia') : Text('Not Credia'),
-        backgroundColor: const dartUI.Color.fromARGB(255, 27, 76, 153),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'This is page ${_currentIndex + 1}',
-              style: TextStyle(fontSize: 24.0),
-            ),
-          ],
+        title: Text(
+          '${_currentIndex + 1}',
+          style: TextStyle(color: Colors.black),
         ),
+        backgroundColor: Colors.white,
       ),
+      body: _children[_currentIndex],
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Text(
+      //         'This is page ${_currentIndex + 1}',
+      //         style: TextStyle(fontSize: 24.0),
+      //       ),
+      //     ],
+      //   ),
+      // ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           type: BottomNavigationBarType.fixed,
