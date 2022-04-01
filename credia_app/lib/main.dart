@@ -1,6 +1,8 @@
 import 'dart:ui' as dartUI;
-import 'placeholder_widget.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:credia_app/accounts_page.dart';
+import 'package:credia_app/virtualcards_page.dart';
+import 'package:credia_app/payments_page.dart';
+import 'package:credia_app/transactions_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -190,10 +192,10 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   final List _children = [
-    PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.deepOrange),
-    PlaceholderWidget(Colors.green),
-    PlaceholderWidget(Colors.blue)
+    AccountsPage(),
+    VirtualCardsPage(),
+    TransactionsPage(),
+    PaymentsPage(),
   ];
 
   @override
@@ -247,65 +249,5 @@ class _MainPageState extends State<MainPage> {
             });
           }),
     );
-  }
-}
-
-class AccountsPage extends StatefulWidget {
-  const AccountsPage({Key? key}) : super(key: key);
-
-  @override
-  State<AccountsPage> createState() => _AccountsPageState();
-}
-
-class _AccountsPageState extends State<AccountsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('Accounts'),
-      ),
-    );
-  }
-}
-
-class VirtualCardsPage extends StatefulWidget {
-  const VirtualCardsPage({Key? key}) : super(key: key);
-
-  @override
-  State<VirtualCardsPage> createState() => _VirtualCardsPageState();
-}
-
-class _VirtualCardsPageState extends State<VirtualCardsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class TransactionsPage extends StatefulWidget {
-  const TransactionsPage({Key? key}) : super(key: key);
-
-  @override
-  State<TransactionsPage> createState() => _TransactionsPageState();
-}
-
-class _TransactionsPageState extends State<TransactionsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class PaymentsPage extends StatefulWidget {
-  const PaymentsPage({Key? key}) : super(key: key);
-
-  @override
-  State<PaymentsPage> createState() => _PaymentsPageState();
-}
-
-class _PaymentsPageState extends State<PaymentsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Placeholder();
   }
 }
