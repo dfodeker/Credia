@@ -189,6 +189,12 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
+  List<Widget> _widgetOptions = <Widget>[
+    AccountsPage(),
+    VirtualCardsPage(),
+    TransactionsPage(),
+    PaymentsPage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -201,47 +207,101 @@ class _MainPageState extends State<MainPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'This is page 2',
+              'This is page ${_currentIndex + 1}',
               style: TextStyle(fontSize: 24.0),
-            ),
-            CupertinoButton(
-              child: const Text('Go to page 1'),
-              onPressed: () {
-                Navigator.pop(context);
-              },
             ),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
+          type: BottomNavigationBarType.fixed,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.wallet),
               label: 'Accounts',
-              backgroundColor: const dartUI.Color.fromARGB(255, 27, 76, 153),
             ),
             BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.creditCard),
+              icon: Icon(
+                FontAwesomeIcons.creditCard,
+              ),
               label: 'Virtual cards',
-              backgroundColor: Colors.cyan,
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.squarePollVertical),
               label: 'Transactions',
-              backgroundColor: Colors.green,
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.dollarSign),
               label: 'Payments',
-              backgroundColor: Colors.red,
             ),
           ],
+          selectedItemColor: dartUI.Color.fromARGB(255, 35, 98, 199),
           onTap: (index) {
             setState(() {
               _currentIndex = index;
             });
           }),
     );
+  }
+}
+
+class AccountsPage extends StatefulWidget {
+  const AccountsPage({Key? key}) : super(key: key);
+
+  @override
+  State<AccountsPage> createState() => _AccountsPageState();
+}
+
+class _AccountsPageState extends State<AccountsPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text('Accounts'),
+      ),
+    );
+  }
+}
+
+class VirtualCardsPage extends StatefulWidget {
+  const VirtualCardsPage({Key? key}) : super(key: key);
+
+  @override
+  State<VirtualCardsPage> createState() => _VirtualCardsPageState();
+}
+
+class _VirtualCardsPageState extends State<VirtualCardsPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class TransactionsPage extends StatefulWidget {
+  const TransactionsPage({Key? key}) : super(key: key);
+
+  @override
+  State<TransactionsPage> createState() => _TransactionsPageState();
+}
+
+class _TransactionsPageState extends State<TransactionsPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class PaymentsPage extends StatefulWidget {
+  const PaymentsPage({Key? key}) : super(key: key);
+
+  @override
+  State<PaymentsPage> createState() => _PaymentsPageState();
+}
+
+class _PaymentsPageState extends State<PaymentsPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Placeholder();
   }
 }
