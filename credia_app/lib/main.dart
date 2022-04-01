@@ -1,5 +1,6 @@
 import 'dart:ui' as dartUI;
 
+import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -12,13 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Credia',
       theme: ThemeData(
-        primaryColor: const dartUI.Color.fromARGB(255, 30, 117, 199),
-        scaffoldBackgroundColor: dartUI.Color.fromARGB(255, 224, 225, 226),
+        primaryColor: const dartUI.Color.fromARGB(255, 27, 76, 153),
+        scaffoldBackgroundColor: dartUI.Color.fromARGB(255, 231, 231, 232),
       ),
       home: MyHomePage(),
     );
   }
-} //random commenthjj
+}
 
 //change background color
 class MyHomePage extends StatefulWidget {
@@ -54,8 +55,8 @@ class ButtonSection extends StatelessWidget {
           height: 50.0,
           child: TextButton(
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Page2()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MainPage()));
               },
               style: TextButton.styleFrom(
                   backgroundColor: Colors.blue,
@@ -179,66 +180,68 @@ class Title extends StatelessWidget {
   }
 }
 
-class Page2 extends StatelessWidget {
-  Page2({Key? key}) : super(key: key);
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Page 2'),
+        title: _currentIndex == 0 ? Text('Credia') : Text('Not Credia'),
+        backgroundColor: const dartUI.Color.fromARGB(255, 27, 76, 153),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Page 2',
-                style: TextStyle(fontSize: 32.0, color: Colors.black)),
-            TextButton(
-              child: const Text('Back',
-                  style: TextStyle(fontSize: 18.0, color: Colors.black)),
+            Text(
+              'This is page 2',
+              style: TextStyle(fontSize: 24.0),
+            ),
+            CupertinoButton(
+              child: const Text('Go to page 1'),
               onPressed: () {
                 Navigator.pop(context);
-              },
-            ),
-            //text button
-            TextButton(
-              child: const Text('Next',
-                  style: TextStyle(fontSize: 18.0, color: Colors.black)),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Page2()));
               },
             ),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.wallet),
-            label: 'Accounts',
-            backgroundColor: Colors.red,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.creditCard),
-            label: 'Virtual cards',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.squarePollVertical),
-            label: 'Transactions',
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.dollarSign),
-            label: 'Payments',
-            backgroundColor: Colors.black,
-          ),
-        ],
-      ),
+          currentIndex: _currentIndex,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(FontAwesomeIcons.wallet),
+              label: 'Accounts',
+              backgroundColor: const dartUI.Color.fromARGB(255, 27, 76, 153),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(FontAwesomeIcons.creditCard),
+              label: 'Virtual cards',
+              backgroundColor: Colors.cyan,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(FontAwesomeIcons.squarePollVertical),
+              label: 'Transactions',
+              backgroundColor: Colors.green,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(FontAwesomeIcons.dollarSign),
+              label: 'Payments',
+              backgroundColor: Colors.red,
+            ),
+          ],
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          }),
     );
   }
 }
