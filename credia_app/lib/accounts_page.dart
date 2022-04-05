@@ -16,11 +16,11 @@ class _AccountsPageState extends State<AccountsPage> {
       body: Stack(
         children: const <Widget>[
           //all other page components
-
           Rectangle(),
           Circle1(),
           RightRectangle(),
           Circle2(),
+          Body(),
           Boxy(),
           DueDate(),
         ],
@@ -223,6 +223,26 @@ class _DueDateState extends State<DueDate> {
         ),
         //a list tile with a leading icon
       ),
+    );
+  }
+}
+
+class Body extends StatelessWidget {
+  const Body({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(children: <Widget>[
+        Container(
+          width: 9.0,
+          child: Column(
+            children: <Widget>[
+              Image.asset('credia_app/assets/Credia Logo.png')
+            ],
+          ),
+        )
+      ]),
     );
   }
 }
