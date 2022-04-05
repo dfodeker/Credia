@@ -234,11 +234,21 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(children: <Widget>[
-        Container(
-          width: 9.0,
+        SizedBox(
+          width: 200.0,
+          height: 200.0,
           child: Column(
             children: <Widget>[
-              Image.asset('credia_app/assets/Credia Logo.png')
+              Image.asset("assets/loading_80.png"),
+              Container(
+                padding: EdgeInsets.all(4),
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    )),
+              ),
             ],
           ),
         )
