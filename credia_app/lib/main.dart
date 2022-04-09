@@ -1,5 +1,6 @@
 import 'dart:ui' as dartUI;
 import 'package:credia_app/accounts_page.dart';
+import 'package:credia_app/accounts_restructured.dart';
 import 'package:credia_app/virtualcards_page.dart';
 import 'package:credia_app/payments_page.dart';
 import 'package:credia_app/transactions_page.dart';
@@ -33,13 +34,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: ListView(
+      body: Stack(
+        children: const <Widget>[
           Title(),
           FrostedGlass(),
           BigCircle(),
           SmallCircle(),
-        ),
+        ],
       ),
     );
   }
@@ -192,7 +193,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   final List _children = [
-    AccountsPage(),
+    Restructure(),
     VirtualCardsPage(),
     TransactionsPage(),
     PaymentsPage(),
@@ -251,4 +252,4 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
-//addded comment s 
+//addded comment s
