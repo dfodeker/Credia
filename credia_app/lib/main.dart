@@ -193,7 +193,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   final List _children = [
-    Restructure(),
+    AccountsPage(),
     VirtualCardsPage(),
     TransactionsPage(),
     PaymentsPage(),

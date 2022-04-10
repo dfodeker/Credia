@@ -235,13 +235,13 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(children: <Widget>[
         SizedBox(
-          width: 200.0,
-          height: 200.0,
+          width: 150.0,
+          height: 150.0,
           child: Column(
             children: <Widget>[
               Image.asset("assets/loading_80.png"),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: EdgeInsets.only(top: 40.0),
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
