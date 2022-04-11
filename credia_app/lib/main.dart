@@ -202,13 +202,8 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          '${_currentIndex + 1}',
-          style: TextStyle(color: Colors.black),
-        ),
-        backgroundColor: Colors.white,
-      ),
+      backgroundColor: Colors.white,
+
       body: _children[_currentIndex],
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
