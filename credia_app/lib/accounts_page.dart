@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AccountsPage extends StatefulWidget {
@@ -19,7 +19,6 @@ class _AccountsPageState extends State<AccountsPage> {
           Rectangle(),
           Circle1(),
           RightRectangle(),
-          Circle2(),
           Body(),
           Boxy(),
           DueDate(),
@@ -172,31 +171,6 @@ class Circle1 extends StatelessWidget {
   }
 }
 
-class Circle2 extends StatelessWidget {
-  const Circle2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-        alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 300.0, left: 290.0),
-          child: Container(
-            height: 80.0,
-            width: 80.0,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.blue,
-            ),
-            child: CircleAvatar(
-              backgroundImage: CachedNetworkImageProvider(
-                  'https://i.pinimg.com/564x/56/42/db/5642db06277d15680cd04f688877c8ea.jpg'),
-            ),
-          ),
-        ));
-  }
-}
-
 class DueDate extends StatefulWidget {
   const DueDate({Key? key}) : super(key: key);
 
@@ -241,7 +215,7 @@ class Body extends StatelessWidget {
             children: <Widget>[
               Image.asset("assets/loading_80.png"),
               Container(
-                padding: EdgeInsets.only(top: 40.0),
+                padding: EdgeInsets.all(4.0),
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
