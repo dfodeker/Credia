@@ -1,3 +1,4 @@
+import 'package:credia_app/widgets/card_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
@@ -280,8 +281,9 @@ class _CardActionsState extends State<CardActions> {
       body: Center(
         child: ListView(
           children: <Widget>[
+            CardSlider(),
             Padding(
-              padding: const EdgeInsets.only(top: 300.0),
+              padding: const EdgeInsets.only(bottom: 150.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: _icons

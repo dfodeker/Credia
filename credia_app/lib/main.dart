@@ -238,7 +238,7 @@ class _MainPageState extends State<MainPage> {
               label: 'Payments',
             ),
           ],
-          selectedItemColor: dartUI.Color.fromARGB(255, 35, 98, 199),
+          selectedItemColor: dartUI.Color.fromARGB(255, 184, 12, 9),
           onTap: (index) {
             setState(() {
               _currentIndex = index;
@@ -248,3 +248,6 @@ class _MainPageState extends State<MainPage> {
   }
 }
 //addded comment s
+
+
+//card slider
