@@ -16,7 +16,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
     var black = Colors.black;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Transactions',
           style: TextStyle(color: Colors.black),
         ),
@@ -67,11 +67,11 @@ class BloxyLong extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Container(
               height: 170.0,
-              child: Padding(
+              child: const Padding(
                 padding: EdgeInsets.only(left: 23.0),
                 child: Text(
                   'Grouped Transactions',
-                  style: const TextStyle(fontSize: 17.0),
+                  style: TextStyle(fontSize: 17.0),
                 ),
               ),
             ),
