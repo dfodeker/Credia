@@ -1,6 +1,5 @@
 import 'dart:ui' as dartUI;
 import 'package:credia_app/accounts_page.dart';
-import 'package:credia_app/accounts_restructured.dart';
 import 'package:credia_app/virtualcards_page.dart';
 import 'package:credia_app/payments_page.dart';
 import 'package:credia_app/transactions_page.dart';
